@@ -5,22 +5,22 @@ using namespace std;
 
 int main()
 {
-	Student Popescu, Ioan;
-	Ioan.SetName("Ioan");
-	Ioan.SetGradeMatematics(10);
-	Ioan.SetGradeEnglish(5);
-	Ioan.SetGradeHistory(9);
+	Student Foamea, Datoria;
+	Foamea.SetName("Foamea");
+	Foamea.SetGradeMatematics(10);
+	Foamea.SetGradeEnglish(5);
+	Foamea.SetGradeHistory(9);
 
-	Popescu.SetName("Popescu");
-	Popescu.SetGradeMatematics(6);
-	Popescu.SetGradeEnglish(8);
-	Popescu.SetGradeHistory(10);
+	Datoria.SetName("Datoria");
+	Datoria.SetGradeMatematics(6);
+	Datoria.SetGradeEnglish(8);
+	Datoria.SetGradeHistory(10);
 
-	printf("Compare name (Ioan, Popescu) = %d\n", CompareName(&Ioan, &Popescu));
-	printf("Compare grade matematics (Ioan, Popescu) = %d\n", CompareGradeMatematics(&Ioan, &Popescu));
-	printf("Compare grade english (Ioan, Popescu) = %d\n", CompareGradeEnglish(&Ioan, &Popescu));
-	printf("Compare grade history (Ioan, Popescu) = %d\n", CompareGradeHistory(&Ioan, &Popescu));
-	printf("Compare average grade (Ioan, Popescu) = %d\n", CompareAverageGrade(&Ioan, &Popescu));
+	printf("Compare name (Foamea, Datoria) = %d\n", CompareName(&Foamea, &Datoria));
+	printf("Compare grade matematics (Foamea, Datoria) = %d\n", CompareGradeMatematics(&Foamea, &Datoria));
+	printf("Compare grade english (Foamea, Datoria) = %d\n", CompareGradeEnglish(&Foamea, &Datoria));
+	printf("Compare grade history (Foamea, Datoria) = %d\n", CompareGradeHistory(&Foamea, &Datoria));
+	printf("Compare average grade (Foamea, Datoria) = %d\n", CompareAverageGrade(&Foamea, &Datoria));
 
 	return 0;
 }
