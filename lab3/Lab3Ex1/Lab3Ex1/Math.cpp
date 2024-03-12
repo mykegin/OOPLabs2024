@@ -1,6 +1,7 @@
 #include "Math.h"
 #include <stdio.h>
 #include <stdarg.h>
+#include <cstring>
 int Math::Add(int x, int y)
 {
 	int z;
@@ -70,9 +71,16 @@ int Math::Add(int count, ...)
 	return val;
 }
 
-/*
-char* Math::Add(const char*, const char*)
+char* Math::Add(const char* sir1, const char* sir2)
 {
+	if (sir1 == nullptr || sir2 == nullptr)
+		return nullptr;
 
+	int lungime = strlen(sir1) + strlen(sir2) + 1;
+	char* result = new char[lungime];
+
+	strcpy_s(result, lungime, sir1);
+	strcat_s(result, lungime, sir2);
+
+	return result;
 }
-*/
