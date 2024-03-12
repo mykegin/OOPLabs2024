@@ -16,14 +16,14 @@ int Math::Add(int x, int y, int z)
 	return t;
 }
 
-int Math::Add(double x, double y)
+double Math::Add(double x, double y)
 {
 	double z;
 	z = x + y;
 	return z;
 }
 
-int Math::Add(double x, double y, double z)
+double Math::Add(double x, double y, double z)
 {
 	z = z + x + y;
 	return z;
@@ -43,14 +43,14 @@ int Math::Mul(int x, int y, int z)
 	return t;
 }
 
-int Math::Mul(double x, double y)
+double Math::Mul(double x, double y)
 {
 	double z;
 	z = x * y;
 	return z;
 }
 
-int Math::Mul(double x, double y, double z)
+double Math::Mul(double x, double y, double z)
 {
 	z = z * x * y;
 	return z;
