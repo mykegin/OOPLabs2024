@@ -2,8 +2,8 @@
 
 int CompareName(Student* firstStudent, Student* secondStudent)
 {
-	const string nameFirstStudent = firstStudent->GetName();
-	const string nameSecondStudent = secondStudent->GetName();
+	 string nameFirstStudent = firstStudent->GetNume();
+	 string nameSecondStudent = secondStudent->GetNume();
 
 	if (nameFirstStudent < nameSecondStudent)
 		return -1;
@@ -12,10 +12,10 @@ int CompareName(Student* firstStudent, Student* secondStudent)
 	return 0;
 }
 
-int CompareGradeMatematics(const Student* firstStudent, const Student* secondStudent)
+int CompareGradeMatematics( Student* firstStudent,  Student* secondStudent)
 {
-	const float gradeFirstStudent = firstStudent->GetGradeMatematics();
-	const float gradeSecondStudent = secondStudent->GetGradeMatematics();
+	 float gradeFirstStudent = firstStudent->GetGradeMatematics();
+	 float gradeSecondStudent = secondStudent->GetGradeMatematics();
 
 	if (gradeFirstStudent < gradeSecondStudent)
 		return -1;
@@ -24,10 +24,10 @@ int CompareGradeMatematics(const Student* firstStudent, const Student* secondStu
 	return 0;
 }
 
-int CompareGradeHistory(const Student* firstStudent, const Student* secondStudent)
+int CompareGradeHistory( Student* firstStudent,  Student* secondStudent)
 {
-	const float gradeFirstStudent = firstStudent->GetGradeHistory();
-	const float gradeSecondStudent = secondStudent->GetGradeHistory();
+	 float gradeFirstStudent = firstStudent->GetGradeHistory();
+	 float gradeSecondStudent = secondStudent->GetGradeHistory();
 
 	if (gradeFirstStudent < gradeSecondStudent)
 		return -1;
@@ -37,10 +37,10 @@ int CompareGradeHistory(const Student* firstStudent, const Student* secondStuden
 }
 
 
-int CompareGradeEnglish(const Student* firstStudent, const Student* secondStudent)
+int CompareGradeEnglish( Student* firstStudent,  Student* secondStudent)
 {
-	const float gradeFirstStudent = firstStudent->GetGradeEnglish();
-	const float gradeSecondStudent = secondStudent->GetGradeEnglish();
+	 float gradeFirstStudent = firstStudent->GetGradeEnglish();
+	 float gradeSecondStudent = secondStudent->GetGradeEnglish();
 
 	if (gradeFirstStudent < gradeSecondStudent)
 		return -1;
@@ -49,10 +49,10 @@ int CompareGradeEnglish(const Student* firstStudent, const Student* secondStuden
 	return 0;
 }
 
-int CompareAverageGrade(const Student* firstStudent, const Student* secondStudent)
+int CompareAverageGrade( Student* firstStudent,  Student* secondStudent)
 {
-	const float gradeFirstStudent = firstStudent->GetAverageGrade();
-	const float gradeSecondStudent = secondStudent->GetAverageGrade();
+	 float gradeFirstStudent = firstStudent->GetAverageGrade();
+	 float gradeSecondStudent = secondStudent->GetAverageGrade();
 
 	if (gradeFirstStudent < gradeSecondStudent)
 		return -1;

@@ -10,15 +10,15 @@ private:
 	float gradeEnglish;
 	float gradeHistory;
 public:
-	void SetName(string nameToSet);
-	string GetName();
+	void SetNume(string nameToSet);
+	string GetNume();
 
 	void SetGradeMatematics(float gradeToSet);
-	float GetGradeMatematics() const;
+	float GetGradeMatematics() ;
 	void SetGradeEnglish(float gradeToSet);
-	float GetGradeEnglish() const;
+	float GetGradeEnglish() ;
 	void SetGradeHistory(float gradeToSet);
-	float GetGradeHistory() const;
+	float GetGradeHistory() ;
 
-	float GetAverageGrade() const;
+	float GetAverageGrade() ;
 };

@@ -6,15 +6,15 @@ using namespace std;
 int main()
 {
 	Student Foamea, Datoria;
-	Foamea.SetName("Foamea");
-	Foamea.SetGradeMatematics(10);
-	Foamea.SetGradeEnglish(5);
-	Foamea.SetGradeHistory(9);
+	Foamea.SetNume("Foamea");
+	Foamea.SetGradeMatematics(6);
+	Foamea.SetGradeEnglish(9);
+	Foamea.SetGradeHistory(8);
 
-	Datoria.SetName("Datoria");
-	Datoria.SetGradeMatematics(6);
-	Datoria.SetGradeEnglish(8);
-	Datoria.SetGradeHistory(10);
+	Datoria.SetNume("Datoria");
+	Datoria.SetGradeMatematics(7);
+	Datoria.SetGradeEnglish(5);
+	Datoria.SetGradeHistory(6);
 
 	printf("Compare name (Foamea, Datoria) = %d\n", CompareName(&Foamea, &Datoria));
 	printf("Compare grade matematics (Foamea, Datoria) = %d\n", CompareGradeMatematics(&Foamea, &Datoria));
