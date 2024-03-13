@@ -16,5 +16,5 @@ int main()
 	printf("inmultire de 2: %f\n", Mate.Mul(23.9, 3.8));
 	printf("inmultire de 3: %f\n", Mate.Mul(23.9, 3.8, 6.9));
 	printf("adunarea a 10 numere: %d\n", Mate.Add(10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
-	printf("concatenarea a doua siruri: %s\n", Mate.Add("Myke", "Gin"));
+	printf("concatenarea a doua siruri: %s\n", Mate.Add("99999", "201"));
 }

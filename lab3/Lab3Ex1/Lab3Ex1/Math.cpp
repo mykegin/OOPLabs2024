@@ -1,3 +1,4 @@
+#define _CRT_SECURE_NO_WARNINGS
 #include "Math.h"
 #include <stdio.h>
 #include <stdarg.h>
@@ -76,11 +77,50 @@ char* Math::Add(const char* sir1, const char* sir2)
 	if (sir1 == nullptr || sir2 == nullptr)
 		return nullptr;
 
-	int lungime = strlen(sir1) + strlen(sir2) + 1;
-	char* result = new char[lungime];
+	int lungime;
+	int nr, cifra, surplus;
+	
+	if (strlen(sir1) > strlen(sir2))
+	{
+		lungime = strlen(sir1) + 1;
+		int diferenta = strlen(sir1) - strlen(sir2);
+		char* nivelare= new char [diferenta];
+		for (int i = 0; i < diferenta; i++)
+			nivelare[i] = '0';
+		nivelare[diferenta] = '\0';
+		strcat(nivelare, sir2);
 
-	strcpy_s(result, lungime, sir1);
-	strcat_s(result, lungime, sir2);
+		char* resultat = new char[lungime];
 
-	return result;
+		for (int i = lungime - 1; i >= 0; i--)
+		{
+			int j = i - 1;
+			nr = 0;
+			cifra = 0;
+			surplus = 0;
+			resultat[i] = resultat[i - 1] = '0';
+			nr = ((sir1[j] - '0') + (nivelare[j] - '0'));
+			cifra = nr % 10;
+			resultat[i] = resultat[i] + cifra;
+			printf("cifra este: %c\n", resultat[i]);
+			if (surplus)
+			{
+				cifra = nr % 10;
+				resultat[i] = resultat[i] + nr / 10 + '0';
+			}
+			if (nr / 10 > 0)
+				surplus = 1;
+			resultat[lungime] = '\0';
+		}
+		return resultat;
+	}
+	/*else
+	{
+		lungime = strlen(sir2) + 1;
+		int diferenta = strlen(sir1) - strlen(sir2);
+		char* nivelare = new char[diferenta];
+		for (int i = 0; i < diferenta; i++)
+			nivelare[i] = '0';
+		printf("diferenta este: %d\n", diferenta);
+	}*/
 }
