@@ -14,5 +14,8 @@ int main()
     Pictura.Clear();*/
     Pictura.DrawRect(5, 5, 10, 30, '0');
     Pictura.FillRect(5, 5, 10, 30, '0');
+    Pictura.Clear();
+    Pictura.DrawCircle(50, 50, 30, '0');
+    Pictura.FillCircle(50, 50, 30, '0');
     Pictura.Print();
 }

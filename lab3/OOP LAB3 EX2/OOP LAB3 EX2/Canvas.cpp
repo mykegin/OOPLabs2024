@@ -84,3 +84,80 @@ void Canvas::FillRect(int left, int top, int right, int bottom, char ch)
 		for (int j = top; j <= bottom; j++)
 			SetPoint(i, j, ch);
 }
+
+void Canvas::DrawCircle(int x, int y, int ray, char ch)
+{
+	int xc = x, yc = y;
+	int r = ray;
+	x = 0;
+	y = r;
+	int d = 3 - 2 * r;
+	SetPoint(xc + x, yc + y, ch);
+	SetPoint(xc - x, yc + y, ch);
+	SetPoint(xc + x, yc - y, ch);
+	SetPoint(xc - x, yc - y, ch);
+	SetPoint(xc + y, yc + x, ch);
+	SetPoint(xc - y, yc + x, ch);
+	SetPoint(xc + y, yc - x, ch);
+	SetPoint(xc - y, yc - x, ch);
+
+	while (y >= x)
+	{
+		x++;
+		if (d > 0)
+		{
+			y--;
+			d = d + 4 * (x - y) + 10;
+		}
+		else
+			d = d + 4 * x + 6;
+
+		SetPoint(xc + x, yc + y, ch);
+		SetPoint(xc - x, yc + y, ch);
+		SetPoint(xc + x, yc - y, ch);
+		SetPoint(xc - x, yc - y, ch);
+		SetPoint(xc + y, yc + x, ch);
+		SetPoint(xc - y, yc + x, ch);
+		SetPoint(xc + y, yc - x, ch);
+		SetPoint(xc - y, yc - x, ch);
+	}
+}
+
+void Canvas::FillCircle(int x, int y, int ray, char ch)
+{
+	int xc = x, yc = y;
+	int r = ray;
+	x = 0;
+	y = r;
+	int d = 3 - 2 * r;
+
+	DrawLine(xc + x, yc + y, xc - x, yc + y, ch);
+	DrawLine(xc - x, yc + y, xc + x, yc - y, ch);
+	DrawLine(xc + x, yc - y, xc - x, yc - y, ch);
+	DrawLine(xc - x, yc - y, xc + y, yc + x, ch);
+	DrawLine(xc + y, yc + x, xc - y, yc + x, ch);
+	DrawLine(xc - y, yc + x, xc + y, yc - x, ch);
+	DrawLine(xc + y, yc - x, xc - y, yc - x, ch);
+	DrawLine(xc - y, yc - x, xc + x, yc + y, ch);
+
+	while (y >= x)
+	{
+		x++;
+		if (d > 0)
+		{
+			y--;
+			d = d + 4 * (x - y) + 10;
+		}
+		else
+			d = d + 4 * x + 6;
+
+		DrawLine(xc + x, yc + y, xc - x, yc + y, ch);
+		DrawLine(xc - x, yc + y, xc + x, yc - y, ch);
+		DrawLine(xc + x, yc - y, xc - x, yc - y, ch);
+		DrawLine(xc - x, yc - y, xc + y, yc + x, ch);
+		DrawLine(xc + y, yc + x, xc - y, yc + x, ch);
+		DrawLine(xc - y, yc + x, xc + y, yc - x, ch);
+		DrawLine(xc + y, yc - x, xc - y, yc - x, ch);
+		DrawLine(xc - y, yc - x, xc + x, yc + y, ch);
+	}
+}
