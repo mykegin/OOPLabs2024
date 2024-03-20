@@ -1,4 +1,4 @@
-#include "Sorti.h"
+#include "Sort.h"
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>
@@ -8,10 +8,12 @@ using namespace std;
 
 int main()
 {
-	Sorti Pconstr(10, 15, 99);
-	Pconstr.Print();
+	///Sort Pconstr(10, 15, 99);
+	///Pconstr.Print();
 	printf("\n");
 	///Pconstr. InsertSort(false);
-	Pconstr.BubbleSort (false);
-	Pconstr. Print();
+	///Pconstr.QuickSort (true);
+	char c[] = "10,32,18,26,11";
+	Sort caracter(c);
+	caracter.Print();
 }
