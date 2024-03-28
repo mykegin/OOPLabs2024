@@ -4,13 +4,15 @@
 class Number
 {
 	char* nrcurent;
-	char* rezfinal;
 	int primabaza;
 	int bazacurenta;
 	int nrcif = 0;
 public:
 	Number(const char* value, int base); // where base is between 2 and 16
 	~Number();//done
+
+	Number(const Number& d);
+	Number(Number&& e);
 
 	// add operators and copy/move constructor
 

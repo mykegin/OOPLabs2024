@@ -9,11 +9,19 @@
 using namespace std;
 int main()
 {
-	Number numar("10110", 2);
-	numar.GetDigitsCount();
+	Number n1("10110010", 2);
+	Number n2("734", 8);
+	Number n3("FF", 16);
+	printf("n1 has %d digits and it is written in base %d\n", n1.GetDigitsCount(), n1.GetBase());
+	n1.Print();
+	n2.Print();
+
+	/*numar.GetDigitsCount();
 	numar.Print();
 	numar.SwitchBase(5);
-	numar.Print();
-	///printf("%d \n", numar.GetDigitsCount());
+	nr.GetDigitsCount();*/
+
+	//numar.Print();
+	//printf("%d \n", numar.GetDigitsCount());
 }
 

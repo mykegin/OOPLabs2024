@@ -18,10 +18,24 @@ Number::~Number()
 {
 	delete this->nrcurent;
 	this->nrcurent = nullptr;
-	delete this->rezfinal;
-	this->rezfinal = nullptr;
 
 	this->primabaza=this->bazacurenta=this->nrcif = 0;
+}
+
+Number::Number(const Number& d)
+{
+	this->primabaza = d.primabaza;
+	this->bazacurenta = d.bazacurenta;
+	this->nrcif = d.nrcif;
+	this->nrcurent = new char[d.nrcif];
+	this->nrcurent = d.nrcurent;
+}
+
+Number::Number(Number&& e)
+{
+	char* temp = e.nrcurent;
+	e.nrcurent = nullptr;
+	this->nrcurent = temp;
 }
 
 int Number::GetDigitsCount()
@@ -65,7 +79,7 @@ char reVal(int num)
 
 void Number::SwitchBase(int newBase)
 {
-	char* cuvsup= new char[this->nrcif];
+	char* cuvsup = new char[this->nrcif];
 	cuvsup = this->nrcurent;
 	int lungime = this->nrcif;
 	int numar=0;
