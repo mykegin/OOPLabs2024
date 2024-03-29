@@ -14,6 +14,12 @@ public:
 	Number(const Number& d);
 	Number(Number&& e);
 
+	bool operator > (const Number& x);
+	bool operator < (const Number& x);
+	bool operator >= (const Number& x);
+	bool operator <= (const Number& x);
+	bool operator == (const Number& x);
+
 	// add operators and copy/move constructor
 
 	void SwitchBase(int newBase); //done

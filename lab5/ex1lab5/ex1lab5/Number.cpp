@@ -22,6 +22,7 @@ Number::~Number()
 	this->primabaza=this->bazacurenta=this->nrcif = 0;
 }
 
+
 Number::Number(const Number& d)
 {
 	this->primabaza = d.primabaza;
@@ -194,3 +195,188 @@ void Number::SwitchBase(int newBase)
 	this->nrcif = nrimp;
 	this->bazacurenta = newBase;
 }
+
+void transformarebaza10(char* x, int baza)
+{
+	char* cuvsup = new char[strlen(x)];
+	cuvsup = x;
+	int lungime = strlen(x);
+	int numar = 0;
+	int p = 1;
+
+	for (int i = lungime - 1; i >= 0; i--)
+	{
+		numar += val(cuvsup[i]) * p;
+		p = p * baza;
+	}
+
+	int nrimp = 0, cn = numar;
+	while (cn)
+	{
+		cn /= 10;
+		nrimp++;
+	}
+
+	//printf("%d \n", nrimp);
+
+	//delete[] cuvsup;
+	cuvsup = new char[nrimp];
+
+	for (int i = 1; i <= nrimp; i++)
+	{
+		cuvsup[i - 1] = reVal(numar % 10);
+		numar /= 10;
+		//printf("%c \n", reVal(numar % newBase));
+	}
+
+	//printf("%s \n", cuvsup);
+
+	for (int i = 0; i < nrimp / 2; i++)
+	{
+		char aux;
+		aux = cuvsup[i];
+		cuvsup[i] = cuvsup[nrimp - 1 - i];
+		cuvsup[nrimp - 1 - i] = aux;
+	}
+
+	cuvsup[nrimp] = '\0';
+	//printf("% s \n", cuvsup);
+
+	///delete[] this->nrcurent;
+	x = new char[nrimp];
+	x = cuvsup;
+	
+	printf("s-a ajuns pana aici\n");
+	///this->nrcif = nrimp;
+	//printf("% s \n", this->nrcurent);
+}
+
+bool Number::operator > (const Number& x)
+{
+	int bazap, bazad, bazamaimare;
+	bazap = bazacurenta;
+	bazad = x.bazacurenta;
+	if (bazacurenta > x.bazacurenta)
+		bazamaimare = bazacurenta;
+	else
+		bazamaimare = x.bazacurenta;
+
+	///SwitchBase(bazamaimare);
+
+	transformarebaza10(this->nrcurent, bazacurenta);
+	transformarebaza10(x.nrcurent, x.bazacurenta);
+	for (int i = 0; i < strlen(this->nrcurent); i++)
+		if (this->nrcurent[i] >x.nrcurent[i])
+			return true;
+		else
+			return false;
+
+	return false;
+}
+
+bool Number::operator < (const Number& x)
+{
+	int bazap, bazad, bazamaimare;
+	bazap = bazacurenta;
+	bazad = x.bazacurenta;
+	if (bazacurenta > x.bazacurenta)
+		bazamaimare = bazacurenta;
+	else
+		bazamaimare = x.bazacurenta;
+
+	///SwitchBase(bazamaimare);
+
+	transformarebaza10(this->nrcurent, bazacurenta);
+	transformarebaza10(x.nrcurent, x.bazacurenta);
+	for (int i = 0; i < strlen(this->nrcurent); i++)
+		if (this->nrcurent[i] < x.nrcurent[i])
+			return true;
+		else
+			return false;
+
+	return false;
+}
+
+bool Number::operator >= (const Number& x)
+{
+	int bazap, bazad, bazamaimare;
+	bazap = this->bazacurenta;
+	bazad = x.bazacurenta;
+	if (this->bazacurenta > x.bazacurenta)
+		bazamaimare = this->bazacurenta;
+	else
+		bazamaimare = x.bazacurenta;
+
+	///SwitchBase(bazamaimare);
+
+	transformarebaza10(this->nrcurent, this->bazacurenta);
+	transformarebaza10(x.nrcurent, x.bazacurenta);
+	for (int i = 0; i < strlen(this->nrcurent); i++)
+		if (this->nrcurent[i] >= x.nrcurent[i])
+			return true;
+		else
+			return false;
+
+	return false;
+}
+
+bool Number::operator <= (const Number& x)
+{
+	int bazap, bazad, bazamaimare;
+	bazap = bazacurenta;
+	bazad = x.bazacurenta;
+	if (bazacurenta > x.bazacurenta)
+		bazamaimare = bazacurenta;
+	else
+		bazamaimare = x.bazacurenta;
+
+	///SwitchBase(bazamaimare);
+
+	transformarebaza10(this->nrcurent, bazacurenta);
+	transformarebaza10(x.nrcurent, x.bazacurenta);
+
+	printf("%s \n", x.nrcurent);
+	printf("%s \n", this->nrcurent);
+
+	for (int i = 0; i < strlen(this->nrcurent); i++)
+		if (this->nrcurent[i] <= x.nrcurent[i])
+			return true;
+		else
+			return false;
+
+	return false;
+}
+
+/*
+bool Number::operator == (const Number& x)
+{
+	int bazap, bazad, bazamaimare;
+	bazap = bazacurenta;
+	bazad = x.bazacurenta;
+	if (bazacurenta > x.bazacurenta)
+		bazamaimare = bazacurenta;
+	else
+		bazamaimare = x.bazacurenta;
+
+	///SwitchBase(bazamaimare);
+
+	printf("%s \n", x.nrcurent);
+	printf("%s \n", this->nrcurent);
+
+	transformarebaza10(this->nrcurent, bazacurenta);
+	transformarebaza10(x.nrcurent, x.bazacurenta);
+
+	printf("%s \n", x.nrcurent);
+	printf("%s \n", this->nrcurent);
+	for (int i = 0; i < strlen(this->nrcurent); i++)
+		if (this->nrcurent[i] == x.nrcurent[i])
+			return true;
+		else
+		{
+			printf("%s \n", x.nrcurent[i]);
+			return false;
+		}
+
+	return false;
+}
+*/
