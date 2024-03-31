@@ -14,11 +14,11 @@ public:
 	Number(const Number& d);
 	Number(Number&& e);
 
-	bool operator > (const Number& x);
-	bool operator < (const Number& x);
-	bool operator >= (const Number& x);
-	bool operator <= (const Number& x);
-	bool operator == (const Number& x);
+	bool operator > (const Number& other);
+	bool operator < (const Number& other);
+	bool operator >= (const Number& other);
+	bool operator <= (const Number& other);
+	bool operator == (const Number& other);
 
 	// add operators and copy/move constructor
 

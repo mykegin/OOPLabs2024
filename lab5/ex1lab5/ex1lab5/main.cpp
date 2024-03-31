@@ -12,12 +12,12 @@ int main()
 	Number n1("10110010", 2);
 	Number n2("734", 8);
 
-	/*if (n1 < n2)
+	/*if (n1 > n2)
 		printf("haleluijah \n");
 	else
-		printf("teapa \n");
+		printf("teapa \n");*/
 
-	if (n1 > n2)
+	/*if (n1 > n2)
 		printf("haleluijah \n");
 	else
 		printf("teapa \n");
@@ -27,10 +27,13 @@ int main()
 	else
 		printf("teapa \n");*/
 
-	if (n1 <= n2)
+
+	
+
+	/*if (n1 <= n2)
 		printf("haleluijah \n");
 	else
-		printf("teapa \n");
+		printf("teapa \n");*/
 
 	/*if (n1 == n2)
 		printf("haleluijah \n");

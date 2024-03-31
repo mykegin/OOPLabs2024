@@ -22,7 +22,7 @@ Number::~Number()
 	this->primabaza=this->bazacurenta=this->nrcif = 0;
 }
 
-
+/*
 Number::Number(const Number& d)
 {
 	this->primabaza = d.primabaza;
@@ -37,7 +37,7 @@ Number::Number(Number&& e)
 	char* temp = e.nrcurent;
 	e.nrcurent = nullptr;
 	this->nrcurent = temp;
-}
+}*/
 
 int Number::GetDigitsCount()
 {
@@ -194,6 +194,8 @@ void Number::SwitchBase(int newBase)
 	}
 	this->nrcif = nrimp;
 	this->bazacurenta = newBase;
+
+	printf("% s \n", this->nrcurent);
 }
 
 void transformarebaza10(char* x, int baza)
@@ -251,7 +253,19 @@ void transformarebaza10(char* x, int baza)
 	//printf("% s \n", this->nrcurent);
 }
 
-bool Number::operator > (const Number& x)
+bool Number::operator > (const Number& other)
+{
+	Number nr1(*this), nr2(other);
+	//printf("%s \n", *this);
+	//printf("%s \n", other);
+	nr1.SwitchBase(10);
+	nr2.SwitchBase(10);
+	//printf("%s \n", *this);
+	//printf("%s \n", other);
+	return nr1.nrcurent > nr2.nrcurent;
+}
+
+/*bool Number::operator > (const Number& x)
 {
 	int bazap, bazad, bazamaimare;
 	bazap = bazacurenta;
@@ -322,7 +336,20 @@ bool Number::operator >= (const Number& x)
 
 bool Number::operator <= (const Number& x)
 {
+	Number nr1(*this), nr2(x);
+	printf("%s \n", nr1);
+	printf("%s \n", nr2);
+	nr1.SwitchBase(10);
+	nr2.SwitchBase(10);
+	printf("%s \n", nr1);
+	printf("%s \n", nr2);
+	return nr1.nrcurent <= nr2.nrcurent;
+}*/
+
+/*bool Number::operator <= (const Number& x)
+{
 	int bazap, bazad, bazamaimare;
+	Number nr1(*this), nr2(x);
 	bazap = bazacurenta;
 	bazad = x.bazacurenta;
 	if (bazacurenta > x.bazacurenta)
@@ -332,11 +359,7 @@ bool Number::operator <= (const Number& x)
 
 	///SwitchBase(bazamaimare);
 
-	transformarebaza10(this->nrcurent, bazacurenta);
-	transformarebaza10(x.nrcurent, x.bazacurenta);
-
-	printf("%s \n", x.nrcurent);
-	printf("%s \n", this->nrcurent);
+	nr1.SwitchBase(10);
 
 	for (int i = 0; i < strlen(this->nrcurent); i++)
 		if (this->nrcurent[i] <= x.nrcurent[i])
@@ -345,7 +368,7 @@ bool Number::operator <= (const Number& x)
 			return false;
 
 	return false;
-}
+}*/
 
 /*
 bool Number::operator == (const Number& x)
