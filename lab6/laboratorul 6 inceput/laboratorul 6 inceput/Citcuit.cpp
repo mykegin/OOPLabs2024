@@ -2,14 +2,6 @@
 #include <iostream>
 
 using namespace std;
-/*	Circuit();
-	void timeConverter(double time);
-	void SetLength(double length);
-	void SetWeather(Weather w);
-	void AddCar(Car* car);
-	void Race();
-	void ShowFinalRanks();
-	void ShowWhoDidNotFinish();*/
 
 Circuit::Circuit()
 {
