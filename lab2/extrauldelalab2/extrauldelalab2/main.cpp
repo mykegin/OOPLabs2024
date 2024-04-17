@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Movie.h"
 #include "Functions.h"
+#include "MovieSeries.h"
 int main()
 {
     Movie ep5;
@@ -37,5 +38,13 @@ movie_compare_score(ep4, ep5),
 movie_compare_length(ep4, ep5),
 movie_compare_passed_years(ep4, ep5));
 
+    MovieSeries series;
+    series.init();
+    series.add( &ep5);
+    series.add( &ep4);
+    series.add( &ep6);
+
+    series.sort();
+    series.print();
     return 0;
 }
