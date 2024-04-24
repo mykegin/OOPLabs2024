@@ -70,11 +70,6 @@ void Tree<T>::add_node(T data, Node<T>* tata)
 template <class T>
 Node<T>* Tree<T>::get_node(int index, Node<T>* tata)
 {
-	if (index < 0)
-	{
-		printf("Error: index can't be negative.");
-		return nullptr;
-	}
 	if (tata == nullptr) {
 		return this->radacina;
 	}
