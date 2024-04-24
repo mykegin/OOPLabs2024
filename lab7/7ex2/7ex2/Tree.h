@@ -23,7 +23,10 @@ class Tree
 {
 	Node<T>* radacina;
 public:
-	Tree() : radacina(nullptr) {}
+	Tree()
+{
+	radacina=nullptr;
+}
 	void add_node(T data, Node<T>* tata);
 	Node<T>* get_node(int index, Node<T>* tata);
 	void delete_node(Node<T>* sterge);
