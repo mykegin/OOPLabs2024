@@ -23,7 +23,10 @@ class Tree
 {
 	Node<T>* radacina;
 public:
-	Tree() : radacina(nullptr) {}
+	Tree()
+{
+	radacina=nullptr;
+}
 	void add_node(T data, Node<T>* tata);
 	Node<T>* get_node(int index, Node<T>* tata);
 	void delete_node(Node<T>* sterge);
@@ -106,12 +109,6 @@ Node<T>* Tree<T>::find(T value, Node<T>* tata, int(*callback)(T, T))
 template <class T>
 void Tree<T>::insert(int index, T data, Node<T>* tata)
 {
-	if (index < 0)
-	{
-		printf("Error: index can't be negative.");
-		return;
-	}
-	if (index > tata->nrcopii)
 		index = tata->nrcopii;
 	while (index >= tata->spatiu) {
 		ajusteazaSize(tata);
