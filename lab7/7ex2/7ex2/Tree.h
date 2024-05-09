@@ -35,7 +35,7 @@ public:
 
 
 template <class T>
-void updateAlocatedSize(Node<T>* tata)
+void ajusteazaSize(Node<T>* tata)
 {
 	int newSize = tata->spatiu * 2;
 	Node<T>** tmp = new Node<T>*[newSize];
@@ -57,21 +57,16 @@ void Tree<T>::add_node(T data, Node<T>* tata)
 		return;
 	}
 	if (tata->spatiu <= tata->nrcopii)
-		updateAlocatedSize(tata);
+		ajusteazaSize(tata);
 
 	tata->noduricopii[tata->nrcopii] = new Node<T>;
 	tata->noduricopii[tata->nrcopii]->data = data;
-	tata->nrcopii += 1;
+	tata->nrcopii++;
 }
 
 template <class T>
 Node<T>* Tree<T>::get_node(int index, Node<T>* tata)
 {
-	if (index < 0)
-	{
-		printf("Error: index can't be negative.");
-		return nullptr;
-	}
 	if (tata == nullptr) {
 		return this->radacina;
 	}
@@ -119,7 +114,7 @@ void Tree<T>::insert(int index, T data, Node<T>* tata)
 	if (index > tata->nrcopii)
 		index = tata->nrcopii;
 	while (index >= tata->spatiu) {
-		updateAlocatedSize(tata);
+		ajusteazaSize(tata);
 	}
 
 	if (tata->noduricopii[index] == nullptr) {
@@ -130,7 +125,7 @@ void Tree<T>::insert(int index, T data, Node<T>* tata)
 	}
 
 	if (tata->nrcopii >= tata->spatiu) {
-		updateAlocatedSize(tata);
+		ajusteazaSize(tata);
 	}
 
 	for (int i = tata->spatiu; i > index; --i)
