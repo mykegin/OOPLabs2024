@@ -39,11 +39,7 @@ int main()
 	map<string, int> nrcuv;
 
 	int k = 0;
-
 	transform(prop.begin(), prop.end(), prop.begin(), tolower);
-
-	for (int i = 0; i < prop.size(); i++)
-		cout << prop[i];
 
 	for (int i = 0; i < prop.size(); i++)
 	{
@@ -59,23 +55,6 @@ int main()
 				}
 		}
 	}
-
-	/*
-	while (true)
-	{
-		const int found = prop.find_first_of(" ,.?!");
-		if (found == -1) break;
-
-		string word = prop.substr(0, found);
-		transform(word.begin(), word.end(), word.begin(), tolower);
-		prop.erase(prop.begin(), prop.begin() + found + 1);
-
-		if (!word.empty()) {
-			cout << "Added the word \"" << word << "\" to the map\n";
-			nrcuv[word]++;
-		}
-	}
-	*/
 
 	priority_queue<pair<string, int>, vector<pair<string, int>>, Compare> pqueue;
 
