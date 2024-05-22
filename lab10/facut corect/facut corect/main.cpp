@@ -373,7 +373,7 @@ int main()
     cout << "Numarul 3 se afla pe pozitia: " << intArray.Find(3) << '\n';
     intArray.Sort();
     intArray.afisare();
-    cout << "Numarul 3, gasit cu,,,,, cautarea binara se afla pe pozitia: " << intArray.BinarySearch(3) << '\n';
+    cout << "Numarul 3, gasit cu cautarea binara se afla pe pozitia: " << intArray.BinarySearch(3) << '\n';
 
     intArray.Delete(1);
     ArrayIterator<int> it = intArray.GetBeginIterator();
