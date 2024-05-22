@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class exceptie2 : public exception {
+class exceptie : public exception {
 public:
     virtual const char* what() const throw() {
         return "Indexul este inafara domeniului!";
@@ -106,11 +106,11 @@ public:
     {
         try
         {
-            exceptie2 e;
+            exceptie e;
             if (index<0 || index>Size)
                 throw e;
         }
-        catch (exceptie2& e)
+        catch (exceptie& e)
         {
             cout << e.what() << '\n';
         }
@@ -136,11 +136,11 @@ public:
     {
         try
         {
-            exceptie2 e;
+            exceptie e;
             if (index<0 || index>Size)
                 throw e;
         }
-        catch (exceptie2& e)
+        catch (exceptie& e)
         {
             cout << e.what() << '\n';
         }
@@ -164,11 +164,11 @@ public:
     {
         try
         {
-            exceptie2 e;
+            exceptie e;
             if (index<0 || index>Size)
                 throw e;
         }
-        catch (exceptie2& e)
+        catch (exceptie& e)
         {
             cout << e.what() << '\n';
         }
@@ -193,11 +193,11 @@ public:
     {
         try
         {
-            exceptie2 e;
+            exceptie e;
             if (index<0 || index>Size)
                 throw e;
         }
-        catch (exceptie2& e)
+        catch (exceptie& e)
         {
             cout << e.what() << '\n';
         }
