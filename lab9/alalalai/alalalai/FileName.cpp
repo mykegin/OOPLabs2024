@@ -183,6 +183,7 @@ int main()
     m[10] = "C++";
     m[20] = "test";
     m[30] = "Poo";
+    m[10];
     for (auto iter = m.begin(); iter != m.end(); ++iter)
     {
         auto [key, value, index] = *iter;
