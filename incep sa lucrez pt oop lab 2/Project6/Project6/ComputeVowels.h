@@ -1,12 +1,12 @@
 #pragma once
 #include "Procesor.h"
-class LongestWord :
+class ComputeVowels :
     public Procesor
 {
 private:
     string Name;
 public:
-    LongestWord(string name);
+    ComputeVowels(string name);
     string GetName();
     int Compute(string s);
 };

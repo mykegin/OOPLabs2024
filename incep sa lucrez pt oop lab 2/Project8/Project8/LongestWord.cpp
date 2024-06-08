@@ -1,14 +1,15 @@
 #include "LongestWord.h"
-#include <vector>
 
-LongestWord::LongestWord(string name)
+LongestWord::LongestWord(string se)
 {
-	this->Name = name;
+    this->se = se;
 }
+
 string LongestWord::GetName()
 {
-	return this->Name;
+    return this->se;
 }
+
 int LongestWord::Compute(string s)
 {
 	int lengthMax = -1;

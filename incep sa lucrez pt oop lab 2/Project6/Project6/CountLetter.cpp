@@ -1,17 +1,19 @@
 #include "CountLetter.h"
 
-CountLetter::CountLetter(string p, function <bool(char)> predicate)
+CountLetter::CountLetter(string name, function<bool(char)> predicate)
 {
-	this->cuv = p;
-	this->predicat = predicate;
+	this->Name = name;
+	this->predicate = predicate;
 }
-
 string CountLetter::GetName()
 {
-	return cuv;
+	return this->Name;
 }
-
-int CountLetter::Compute(string p)
+int CountLetter::Compute(string s)
 {
-	return 696;
+	int i, nr=0;
+	for (i = 0; i < s.size(); i++)
+		if (predicate(s[i]))
+			nr++;
+	return nr;
 }

@@ -1,24 +1,17 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include <vector>
-#include "Sentence.h"
-#include <stdio.h>
+#include "Procesor.h"
 #include <functional>
+#include <iostream>
 using namespace std;
-class CountLetter : public Procesor
+
+class CountLetter :
+    public Procesor
 {
-
 private:
-
-	string cuv;
-	function <bool(char)> predicat;
-
-
+    string Name;
+    function<bool(char)> predicate;
 public:
-
-	CountLetter(string p, function <bool(char)> predicate);
-	string GetName();
-	int Compute(string p);
+    CountLetter(string name, function<bool(char)> predicate);
+    string GetName();
+    int Compute(string s);
 };
-
